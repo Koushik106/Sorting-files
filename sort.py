@@ -150,3 +150,4 @@ while True:
         continue
     except KeyboardInterrupt:
         print("Program was Interrupted by the User.")
+        break
