@@ -133,16 +133,20 @@ while True:
         for file in os.listdir(file_path):
             if os.path.isfile(os.path.join(file_path, file)):
                 name, ext = os.path.splitext(file)
+                print(file, ext)
                 if ext in folders:
                     subfolder = os.path.join(file_path, folders[ext])
                     os.makedirs(subfolder, exist_ok=True)
                     shutil.move(os.path.join(file_path, file), subfolder)
-                    print("Things Are Sorted In The Created Folder !")
+
+        print("Things Are Sorted In The Created Folder !")
+        break
+
     except ValueError:
         print("Please enter proper values/file path. Try again")
         continue
     except Exception as e:
-        print("Please Enter Right Path. Please try again.")
+        print(e)
         continue
     except KeyboardInterrupt:
         print("Program was Interrupted by the User.")
