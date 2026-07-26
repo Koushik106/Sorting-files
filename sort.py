@@ -144,3 +144,5 @@ while True:
     except Exception as e:
         print("Please Enter Right Path. Please try again.")
         continue
+    except KeyboardInterrupt:
+        print("Program was Interrupted by the User.")
