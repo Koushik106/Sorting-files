@@ -48,7 +48,7 @@ folders = {
     ".webm": "Videos",
     ".m4v": "Videos",
     ".3gp": "Videos",
-    ".mpeg": "Vidoes",
+    ".mpeg": "Videos",
     # Audio
     ".mp3": "Audio",
     ".wav": "Audio",
@@ -126,12 +126,21 @@ folders = {
     ".bak": "Backups",
     ".tmp": "Temp",
 }
-file_path = input("Enter File Path: ")
-for file in os.listdir(file_path):
-    if os.path.isfile(os.path.join(file_path, file)):
-        name, ext = os.path.splitext(file)
-        if ext in folders:
-            subfolder = os.path.join(file_path, folders[ext])
-            os.makedirs(subfolder, exist_ok=True)
-            shutil.move(os.path.join(file_path, file), subfolder)
-            print("Folders has been created sucessfully !!!")
+while True:
+    try:
+        print()
+        file_path = input("Enter File Path: ")
+        for file in os.listdir(file_path):
+            if os.path.isfile(os.path.join(file_path, file)):
+                name, ext = os.path.splitext(file)
+                if ext in folders:
+                    subfolder = os.path.join(file_path, folders[ext])
+                    os.makedirs(subfolder, exist_ok=True)
+                    shutil.move(os.path.join(file_path, file), subfolder)
+                    print("Things Are Sorted In The Created Folder !")
+    except ValueError:
+        print("Please enter proper values/file path. Try again")
+        continue
+    except Exception as e:
+        print("Please Enter Right Path. Please try again.")
+        continue
