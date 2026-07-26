@@ -48,6 +48,7 @@ folders = {
     ".webm": "Videos",
     ".m4v": "Videos",
     ".3gp": "Videos",
+    ".mpeg": "Vidoes",
     # Audio
     ".mp3": "Audio",
     ".wav": "Audio",
